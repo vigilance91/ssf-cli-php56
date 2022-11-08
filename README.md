@@ -82,7 +82,7 @@ Ensure all additional desired/required modules have been installed.
 Output an unsigned packed SSF32 to the console, outputting as hex
 
 ```
->php build/run.php -M encode -F str
+>php build/run.php --M=encode --F=str
     --source="hello world"
     --hex
 ```
@@ -90,15 +90,25 @@ Output an unsigned packed SSF32 to the console, outputting as hex
 Encode an unsigned packed SSF32, outputting to the console as base64
 
 ```
->php build/run.php -M encode -F str
+>php build/run.php --M=encode --F=str
     --source="hello world"
     --base64
+```
+
+Encode an signed packed SSF32, outputting to the console as hex
+
+```
+>php build/run.php --M=encode --F=str
+    --source="hello world"
+    --privateKey=pathToPrivateKey.key
+    --password=yourPasswordHere
+    --hex
 ```
 
 Write SSF encoded string to file
 
 ```
->php build/run.php -M encode -F stf
+>php build/run.php --M=encode --F=stf
     --source="hello world"
     --O="_output/tmpPackedUnsinged.ssf32"
     --hex --v --d=3
@@ -110,7 +120,7 @@ to write the output (assuming there is no other output, errors, exceptions, etc,
 option -F str can be used similar to bellow:
 
 ```
->php build/run.php -M encode -F str
+>php build/run.php --M=encode --F=str
     --source="hello world"
     --hex > _output/tmpPackedUnsinged.hex.ssf32
 ```
@@ -118,7 +128,7 @@ option -F str can be used similar to bellow:
 Verify --source as a base64 encoded Unsigned SSF.
 
 ```
->php build/run.php -M verify -F f
+>php build/run.php -M verify --F=f
     --source="hello world"
     --ssf="I1NTRg0KGgqcgTTO8t+o6YGHEdqa/hDg2kjcp1jKhm66jUffJYR89Ec9fYM0P7fgOPQvfccOAYxScHP08mG8NdfcXDfIlUDBAAABQLlNJ7mTTT4IpS5S19p9q/rEhO/jelOA7pCI96zi783pSzJ0jfVOQaCUZUsMyoj3dgqKzOKwWPUatmlWE/W4N2W3w6rTJQPQTISFOECbnzUuYaWZVeVOu3g6dEdksH5JL3eX97R/uaC3lW/FFykYHY01oxf6hB/qXE1F3c6irjOiaQITZ+D6S0v7qgyvAxFdtmgRCLSVAMgI74rXrpoWAT7QnM6MSk740c/fG23iDvXKK5I7aqfVl1iLUBo4Jd8B+rhTSeOiHYdZZNbiwfdQ22ZyHu+JbmNtpRMQ7TesjOZW+SPMI009rK1KPOFW3Uqp4KJMlszQjn3tkWRlZhjnIvhpmzGIP2/JMi8weaSEd5yTIkRAIVUTCnJp1yboZSUW85dlVmXIfhMYm4wJyF7rDSHSobaG5agPMFOQETf0UUt4"
     --base64
@@ -128,7 +138,7 @@ Verify --source as a base64 encoded Unsigned SSF.
 it is recommended to urlencode the value if the value contains whitespace or other characters needing escaped while also omitting the quottion marks.
 
 ```
->php build/run.php -M verify -F f
+>php build/run.php -M verify --F=f
     --v --d=3 --base64 
     --privateKey="C:/path/to/rsaPrivateKey.key"
     --password="replaceWithYourPrivteKeyPassword"
@@ -139,7 +149,7 @@ it is recommended to urlencode the value if the value contains whitespace or oth
 **Note**:Quotation marks around string arguments are optional, unless the value contains whitespace or other escape characters.
 
 ```
->php build/run.php -M verify -F str
+>php build/run.php -M verify --F=str
     --v --d=3 --base64 
     --privateKey=C%3A%2Fpath%2Fto%2FrsaPrivateKey.key
     --password=replaceWithYourPrivteKeyPassword
