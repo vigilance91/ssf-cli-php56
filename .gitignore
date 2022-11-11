@@ -18,5 +18,6 @@ _build.php
 /input/_output
 /_output/*.log
 /_output/signatures/*.log
+/_output/ssf32/*.log
 hash.bat
 sign.bat
