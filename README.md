@@ -17,8 +17,7 @@
 
 ## License
 
-[ssf-cli.phar]() is released under the [Apache 2.0 License][],
-typical of all VSN products.
+[ssf-cli.phar](https://github.com/vigilance91/ssf-cli-php56) is released under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.html) typical of all VSN products.
 
 See [LICENSE][7] file for details.
 
@@ -27,23 +26,42 @@ See [LICENSE][7] file for details.
 ## Installation
 
 ### using composer
+
+The offical PHP CLI package is available via Composer [here](https://packagist.org/packages/vsn/ssf)
+
+or by running the following in the console (assuming both PHP and Composer have been installed locally)
+
 ```
->composer require vsn/ssf-cli
+>composer require vsn/ssf
 ```
-### using curl
+
+or by adding **vsn/ssf** to your own project **composer.json require** section
+
+then running
+
 ```
->curl ftps://vsn.ca/downloads/php56/ssf-cli.phar
+>composer update
 ```
+
+
 ### using github
+
+Access this URL in browser to clone the repo directly
+
 ```
->git ...
+https://github.com/vigilance91/ssf-cli-php56.git
+```
+
+or install using GithubCLI
+
+```
+>gh repo clone vigilance91/ssf-cli-php56
 ```
 
 ### Or simply
 
 * download [**vsn\ssf-cli-php56&trade; PHAR**](https://vsn.ca/downloads/php56/ssf-cli.phar) from the offical website
 * download the latest stable version via the offcial [**FTPS**](ftps://vsn.ca/downloads/php/56/ssf-cli.phar) server
-* clone the public github repository [**here**](https://github.com/vigilance91/ssf-cli-php56)
 * download the official compressed package (.gz) from [**IPFS**]()
 
 ---
